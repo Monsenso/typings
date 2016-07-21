@@ -29,9 +29,16 @@ interface HighchartsAxisEvent extends Event {
 
 interface HighchartsAxisLabels {
     align?: string;
+    autoRotation?: number[];
+    autoRotationLimit?: number;
+    distance?: number;
     enabled?: boolean;
+    format?: string;
     formatter?: () => string;
+    maxStaggerLines?: number;
     overflow?: string;
+    padding?: number;
+    reserveSpace?: boolean;
     rotation?: number;
     staggerLines?: number;
     step?: number;
@@ -39,6 +46,7 @@ interface HighchartsAxisLabels {
     useHTML?: boolean;
     x?: number;
     y?: number;
+    xIndex?: number
 }
 
 interface HighchartsMousePlotEvents {
@@ -258,6 +266,7 @@ interface HighchartsCSSObject {
     top?: string;
     whiteSpace?: string;
     width?: string;
+    stroke?: string;
 }
 
 interface HighchartsCreditsOptions {
@@ -1105,6 +1114,7 @@ interface HighchartsSeriesOptions extends HighchartsSeriesChart {
     stack?: string | number;
     xAxis?: number;
     yAxis?: number;
+    style?: HighchartsCSSObject;
 }
 
 interface HighchartsSubtitleOptions {
