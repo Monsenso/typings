@@ -1,0 +1,29 @@
+/bower_components/
+/.build/
+/node_modules/
+/www/
+/gulp/**/*.js
+/features/**/*.js
+/cobertura-*/
+/phantomjsdriver.log
+/tslint_rules/*.js
+/typings
+
+#######
+# Vim #
+#######
+*.swp
+*.swo
+/.metadata
+/.recommenders
+/workbench.xmi
+/.nvimrc
+/.tags
+
+##################
+# JetBrains IDEs #
+##################
+.idea
+/source_maps
+/src/**/*.js
+/src/**/*.js.map
