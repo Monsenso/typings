@@ -1063,6 +1063,7 @@ interface HighchartsIndividualSeriesOptions {
     yAxis?: number;
     shape?: string;
     width?: number;
+    height?: number;
 }
 
 interface HighchartsSeriesOptions extends HighchartsIndividualSeriesOptions, HighchartsSeriesChart { }
