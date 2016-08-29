@@ -1114,6 +1114,7 @@ interface HighchartsSeriesOptions extends HighchartsSeriesChart {
     stack?: string | number;
     xAxis?: number;
     yAxis?: number;
+    y?: number;
     style?: HighchartsCSSObject;
 }
 
