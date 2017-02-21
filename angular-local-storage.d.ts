@@ -10,29 +10,30 @@ declare namespace angular.local.storage {
      * myApp.config(function (localStorageServiceProvider) {
      *  localStorageServiceProvider.prefix = 'yourAppName';
      * });
-     * @param prefix default: ls.<your-key>
+     * @param {string} prefix default: ls.<your-key>
      */
     setPrefix(prefix: string):ILocalStorageServiceProvider;
     /**
      * Setter for the storageType
-     * @param storageType localStorage or sessionStorage. default: localStorage
+     * @param {string} storageType localStorage or sessionStorage. default: localStorage
      */
     setStorageType(storageType: string):ILocalStorageServiceProvider;
     /**
      * Setter for cookie config
-     * @param exp number of days before cookies expire (0 = does not expire). default: 30
-     * @param path the web path the cookie represents. default: '/'
+     * @param {number} exp number of days before cookies expire (0 = does not expire). default: 30
+     * @param {string} path the web path the cookie represents. default: '/'
      */
     setStorageCookie(exp: number, path: string):ILocalStorageServiceProvider;
     /**
      * Set the cookie domain, since this runs inside a the config() block, only providers and constants can be injected. As a result, $location service can't be used here, use a hardcoded string or window.location.
      * No default value
+     * @param {string} domain
      */
     setStorageCookieDomain(domain: string):ILocalStorageServiceProvider;
     /**
      * Send signals for each of the following actions:
-     * @param setItem default: true
-     * @param removeItem default: false
+     * @param {boolean} setItem default: true
+     * @param {boolean} removeItem default: false
      */
     setNotify(setItem: boolean, removeItem: boolean):ILocalStorageServiceProvider;
   }
@@ -47,20 +48,20 @@ declare namespace angular.local.storage {
      * Directly adds a value to cookies.
      * Note: Typically used as a fallback if local storage is not supported.
      * Returns: Boolean
-     * @param key
-     * @param val
+     * @param {string} key
+     * @param {string} val
      */
     set(key:string, val:string):boolean;
     /**
      * Directly get a value from a cookie.
      * Returns: value from local storage
-     * @param key
+     * @param {string} key
      */
     get(key:string):string;
     /**
      * Remove directly value from a cookie.
      * Returns: Boolean
-     * @param key
+     * @param {string} key
      */
     remove(key:string):boolean;
     /**
@@ -84,30 +85,30 @@ declare namespace angular.local.storage {
      * Directly adds a value to local storage or session storage.
      * If local storage is not supported, use cookies instead.
      * Returns: Boolean
-     * @param key
-     * @param value
-     * @param type defines type of storage. localStorage or sessionStorage
+     * @param {string} key
+     * @param {typeParameter} value
+     * @param {string} type defines type of storage. localStorage or sessionStorage
      */
     set<T>(key: string, value: T, type: string): boolean;
     /**
      * Directly get a value from local storage or session storage.
      * If local storage is not supported, use cookies instead.
      * Returns: value from local storage
-     * @param key
-     * @param type defines type of storage. localStorage or sessionStorage
+     * @param {string} key
+     * @param {string} type defines type of storage. localStorage or sessionStorage
      */
     get<T>(key: string, type: string): T;
     /**
      * Return array of keys for local storage, ignore keys that not owned.
      * Returns: value from local storage
-     * @param type defines type of storage. localStorage or sessionStorage
+     * @param {string} type defines type of storage. localStorage or sessionStorage
      */
     keys(type: string): string[];
     /**
      * Remove an item from local storage by key.
      * If local storage is not supported, use cookies instead.
      * Returns: Boolean
-     * @param key
+     * @param {string} key
      */
     remove(key: string): boolean;
     /**
@@ -115,38 +116,38 @@ declare namespace angular.local.storage {
      * If local storage is not supported, use cookies instead.
      * Note: Optionally takes a regular expression string and removes matching.
      * Returns: Boolean
-     * @param regularExpression
-     * @param type defines type of storage. localStorage or sessionStorage
+     * @param {RegExp} regularExpression
+     * @param {string} type defines type of storage. localStorage or sessionStorage
      */
     clearAll(regularExpression:RegExp, type: string):boolean;
     /**
      * Bind $scope key to localStorageService.
      * Usage: localStorageService.bind(scope, property, value[optional], key[optional])
      * Returns: deregistration function for this listener.
-     * @param scope
-     * @param property
-     * @param value optional
-     * @param key The corresponding key used in local storage
-     * @param type defines type of storage. localStorage or sessionStorage
+     * @param {angular.IScope} scope
+     * @param {string} property key
+     * @param {any} value optional
+     * @param {string} key The corresponding key used in local storage
+     * @param {string} type defines type of storage. localStorage or sessionStorage
      */
-    bind(scope: angular.IScope, property: string, value?: any, key?: string
-                                                        , type?: string): Function;
+    bind(scope: angular.IScope, property: string, value: any, key: string
+                                                        , type: string): Function;
     /**
      * Return the derive key
      * Returns String
-     * @param key
+     * @param {string} key
      */
     deriveKey(key:string):string;
     /**
      * Remove prefix from the key
      * Returns String
-     * @param key
+     * @param {string} key
      */
     underiveKey(key:string):string;
     /**
      * Return localStorageService.length, ignore keys that not owned.
      * Returns Number
-     * @param type defines type of storage. localStorage or sessionStorage
+     * @param {string} type defines type of storage. localStorage or sessionStorage
      */
     length(type: string):number;
     /**
