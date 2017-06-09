@@ -6,6 +6,8 @@
 /**
  * ngCookies module (angular-cookies.js)
  */
+ 
+/// <reference path="../angularjs/angular.d.ts" />
 declare module angular.cookies {
     /**
     * Cookies options
